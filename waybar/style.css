@@ -1,0 +1,114 @@
+* {
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(17, 17, 19, 0.55);
+  color: #cdd6f4;
+}
+
+/* Workspaces */
+#workspaces {
+  padding: 2px 4px;
+}
+#workspaces button {
+  padding: 0 8px;
+  color: #cdd6f4;
+  margin-right: 4px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+#workspaces button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+#workspaces button.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+#workspaces button.urgent {
+  background-color: rgba(243, 139, 168, 0.35);
+  color: #fff;
+}
+
+#clock,
+#battery,
+#memory,
+#network,
+#pulseaudio,
+#mpris,
+#hyprland-language,
+#tray,
+#window {
+  margin: 2px 4px;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+/* Special tray icon spacing within the tray module */
+#tray > .passive,
+#tray > .active {
+  margin: 0 2px; /* Internal icon spacing */
+}
+
+#hyprland-language {
+  font-weight: 700;
+}
+
+#clock {
+  color: #ffffff;
+  font-weight: 700;
+}
+#window {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#mpris {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+/* Interactive states */
+#clock:hover,
+#battery:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#mpris:hover,
+#hyprland-language:hover,
+#tray:hover,
+#window:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+#battery.charging {
+  color: #a6e3a1; /* Green when charging */
+  animation: charging-pulse 2s ease-in-out infinite;
+}
+
+#battery.warning {
+  color: #f9e2af; /* Yellow for warning */
+}
+
+#battery.critical {
+  color: #f38ba8; /* Red for critical */
+}
+
+@keyframes charging-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

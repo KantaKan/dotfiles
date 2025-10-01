@@ -1,0 +1,41 @@
+# ~/.config/mako/config
+
+# Appearance
+font=FiraCode Nerd Font 11
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=1
+border-radius=2
+padding=8
+margin=10
+max-visible=5
+
+# Layout
+width=300
+height=100
+anchor=top-right
+layer=overlay
+
+# Behavior
+default-timeout=5000
+ignore-timeout=1
+sort=-time
+group-by=summary,body
+
+# Urgency levels
+[urgency=low]
+background-color=#313244
+border-color=#a6adc8
+default-timeout=22000
+
+[urgency=normal]
+background-color=#1e1e2e
+border-color=#89b4fa
+default-timeout=25000
+
+[urgency=high]
+background-color=#f38ba8
+text-color=#11111b
+border-color=#fab387
+default-timeout=0

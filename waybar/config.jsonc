@@ -1,0 +1,124 @@
+{
+  "layer": "top",
+  "position": "top",
+  "font": "FiraCode Nerd Font 10",
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "mpris",
+    "memory",
+    "pulseaudio",
+    "network",
+    "hyprland/language",
+    "battery",
+    "tray"
+  ],
+
+  "playerctl": {
+    "format": "󱢢 {artist} - {title}",
+    "player": "all",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{name} {windows}",
+    "disable-scroll": true,
+    "all-outputs": true,
+    "sort-by": "id",
+    "show-empty": false,
+    "window-rewrite-default": "app", // ถ้าแอพไม่มีใน mapping จะโชว์ ?
+    "window-rewrite": {
+      "class<app.zen_browser.zen>": "",
+      "class<zen>": "", // Zen Browser (Firefox base)
+      "class<Chromium-browser>": "", // Chromium
+      "class<pavucontrol>": "", // Volume control
+      "class<kitty>": "󰄛",
+      "class<com.mitchellh.ghostty>": "", // Ghost terminal
+      "class<code>": " ", // VS Code
+      "class<Cursor>": " ", // Cursor editor (capitalized class)
+      "class<cursor>": " ", // Cursor editor (lowercase class)
+      "class<steam>": "", // Steam
+      "class<discord>": "", // Discord
+      "class<Slack>": "", // Slack
+      "class<1Password>": "", // 1Password
+      "class<thunar>": "", // Thunar file manager
+      "class<Gimp-2.10>": "", // GIMP
+      "class<com.obsproject.Studio>": "", // OBS Studio
+      "class<zoom>": "Zoom"
+    }
+  },
+  "clock": {
+    "format": "{:%A %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "today-format": "<b>{}</b>",
+    "on-click": "gnome-calendar"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G "
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 45,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% ",
+    "format-muted": "Muted ",
+    "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "{essid} ",
+    "format-ethernet": "{ifname}: {ipaddr}",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "sh -c 'command -v nm-connection-editor >/dev/null && nm-connection-editor || (command -v kitty >/dev/null && kitty -e nmtui || command -v foot >/dev/null && foot -e nmtui || command -v alacritty >/dev/null && alacritty -e nmtui || command -v wezterm >/dev/null && wezterm start -- nmtui)'"
+  },
+  // "battery": {
+  //   "format": "{capacity}% {icon}",
+  //   "format-charging": "{capacity}% 󰂄", // Charging icon
+  //   "format-plugged": "{capacity}% ", // Plugged in (full)
+  //   "format-alt": "{time} {icon}", // Alt format (shows time remaining)
+  //   "format-full": "{capacity}% ", // When battery is full
+  //   "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  //   "states": {
+  //     "warning": 30,
+  //     "critical": 15
+  //   },
+  //   "tooltip": true,
+  //   "tooltip-format": "{timeTo}, {capacity}%"
+  // },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format-charging": "{capacity}% 󱐋", // Charging icon
+    "format-plugged": "{capacity}%"
+  },
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "ENG",
+    "format-th": "ไทย"
+  },
+  "mpris": {
+    "format": "󰝚 {title}",
+    "format-paused": "{status_icon} {title}",
+    "max-length": 30,
+    "player-icons": {
+      "default": "🎵"
+    },
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 6, // This adds 6px spacing between tray icons
+    "show-passive-items": true
+  }
+}
