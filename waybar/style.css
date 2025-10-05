@@ -8,32 +8,35 @@
 }
 
 window#waybar {
-  background-color: rgba(17, 17, 19, 0.55);
+  background-color: rgba(30, 30, 34, 0.92);
   color: #cdd6f4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Workspaces */
+/* Workspaces - i3/swaybar-like underline */
 #workspaces {
-  padding: 2px 4px;
+  padding: 0 6px;
 }
 #workspaces button {
   padding: 0 8px;
   color: #cdd6f4;
-  margin-right: 4px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.04);
+  margin: 0 2px;
+  border-radius: 0;
+  background: transparent;
 }
-
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-#workspaces button.active {
-  background-color: rgba(255, 255, 255, 0.18);
+  background: transparent;
   color: #ffffff;
 }
+#workspaces button.active {
+  background: transparent;
+  color: #ffffff;
+  border-bottom: 2px solid #89b4fa;
+}
 #workspaces button.urgent {
-  background-color: rgba(243, 139, 168, 0.35);
-  color: #fff;
+  background: transparent;
+  border-bottom: 2px solid #f38ba8;
+  color: #ffffff;
 }
 
 #clock,
@@ -43,22 +46,41 @@ window#waybar {
 #pulseaudio,
 #mpris,
 #hyprland-language,
+#custom-mic,
 #tray,
 #window {
-  margin: 2px 4px;
-  padding: 4px 8px;
-  background-color: rgba(255, 255, 255, 0.04);
-  border-radius: 10px;
+  margin: 0 2px;
+  padding: 0 6px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Simple separators between modules (i3bar-like) */
+.modules-left > *:not(#workspaces),
+.modules-center > *,
+.modules-right > * {
+  padding-left: 6px;
+  margin-left: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+.modules-left > *:first-child,
+.modules-center > *:first-child,
+.modules-right > *:first-child {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* Special tray icon spacing within the tray module */
 #tray > .passive,
 #tray > .active {
   margin: 0 2px; /* Internal icon spacing */
+
 }
 
-#hyprland-language {
-  font-weight: 700;
+#language {
+ 
+  font-weight: bolder ;
 }
 
 #clock {
@@ -75,7 +97,7 @@ window#waybar {
   opacity: 0.85;
 }
 
-/* Interactive states */
+/* Interactive states (no pill background) */
 #clock:hover,
 #battery:hover,
 #memory:hover,
@@ -83,10 +105,19 @@ window#waybar {
 #pulseaudio:hover,
 #mpris:hover,
 #hyprland-language:hover,
+#custom-mic:hover,
 #tray:hover,
 #window:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.9;
 }
+
+#custom-mic.muted {
+  color: #f38ba8;
+}
+#custom-mic.active {
+  color: #a6e3a1;
+}
+
 
 #battery.charging {
   color: #a6e3a1; /* Green when charging */

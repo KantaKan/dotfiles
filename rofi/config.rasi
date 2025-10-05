@@ -1,4 +1,8 @@
 
 //@theme "/usr/share/rofi/themes/paper-float.rasi"
 
-@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+
+@theme "/home/dog/.config/rofi/launchpad-mac.rasi"
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
